@@ -1,19 +1,18 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-
-// Car pages (files: src/BMW.jsx, src/MercedesCLE53.jsx, src/MercedesC43.jsx, src/Audi.jsx, src/Rox.jsx)
 import BMW from "./BMW";
 import MercedesCLE53 from "./MercedesCLE53";
 import MercedesC43 from "./MercedesC43";
 import Audi from "./Audi";
 import Rox from "./Rox";
 
-// Simple example pages
 function Home() {
   return <h1>Home</h1>;
 }
+
 function About() {
   return <h1>About Us</h1>;
 }
+
 function Contact() {
   return <h1>Contact</h1>;
 }
@@ -22,7 +21,7 @@ export default function App() {
   return (
     <BrowserRouter>
       {/* Top Navigation */}
-      <nav style={{ display: "flex", gap: 16, padding: 12, borderBottom: "1px solid #ddd" }}>
+      <nav className="topbar">
         <Link to="/">Home</Link>
         <Link to="/bmw">BMW M440i</Link>
         <Link to="/mercedes-cle53">Mercedes CLE53</Link>
@@ -34,8 +33,8 @@ export default function App() {
         <Link to="/contact">Contact</Link>
       </nav>
 
-      {/* Page Routes */}
-      <div style={{ padding: 16 }}>
+      {/* Page Content */}
+      <div className="container">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/bmw" element={<BMW />} />
